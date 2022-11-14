@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dilan</title>
+</head>
+<body>
+<style>
+body{
+    text-align: center;
+
+}
+/* .container{
+    
+} */
+h1{
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+p{font-size: 28px;}
+button{
+    font-size: 15px; 
+    margin-left: 10px;
+    border-radius: 5px;
+    
+}
+
+</style>
+<div class="container">
+    <h1>Kamu nanya ?</h1>
+    <img src="dilancepmek.png" height = 250 px width="250px" id ="kamunanya-id">
+    <p id="clicks" >Kamu Telah nanya : 0</p>
+    <button onclick="tambah()">Rambutnya Model apa ya ?</button>
+    <button onclick="kurang()" >maap bang</button>
+    <br>
+    <br>
+    <button onclick="rawr()">RAWWWRR !!!</button>
+</div>
+</body>
+    <script>
+
+        let clicks = 0
+        function tambah(){
+            const audio = new Audio("kamunanya.mp3")
+            audio.play()
+            clicks ++
+            document.getElementById("clicks").innerHTML = "kamu telah nanya : " + clicks
+            document.getElementById("kamunanya-id").src = "kamunanya1.png"
+            audio.addEventListener("ended", function(){
+                document.getElementById('kamunanya-id').src = "dilancepmek.png"
+            })
+        }
+        function kurang(){
+            const audio = new Audio("entekadang.mp3")
+            audio.play()
+            clicks --
+            document.getElementById("clicks").innerHTML = "kamu telah nanya : " + clicks
+            document.getElementById("kamunanya-id").src = "entekadang1.png"
+            audio.addEventListener("ended", function(){
+                document.getElementById('kamunanya-id').src = "dilancepmek.png"
+            })
+        }
+        function rawr(){
+            clicks = 0
+            document.getElementById("clicks").innerHTML = "kamu telah nanya : " + clicks
+        }
+    </script>
+</html>
